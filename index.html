@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Vox Chat Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add marked.js for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-left">
+                <i class="fas fa-database"></i>
+                <h1>Vox Chat Interface</h1>
+            </div>
+            <div class="header-right">
+                <button id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="clearChat" title="Clear Chat">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Message templates for JS -->
+            <template id="messageTemplate">
+                <div class="message">
+                    <div class="message-content"></div>
+                    <div class="message-actions">
+                        <button class="copy-btn" title="Copy Message">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="message-timestamp"></div>
+                </div>
+            </template>
+        </div>
+
+        <div class="typing-indicator hidden" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="chat-input">
+            <div class="input-container">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Type your message... (Shift + Enter for new line)"
+                    rows="1"
+                ></textarea>
+                <div class="input-actions">
+                    <button id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="suggestion-chips" id="suggestionChips">
+                <button class="chip">Run SQL Query</button>
+                <button class="chip">Create CSV</button>
+                <button class="chip">Analyze Data</button>
+                <button class="chip">Get Real-time Info</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
